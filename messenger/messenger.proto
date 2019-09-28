@@ -1,0 +1,16 @@
+syntax = "proto3";
+package messenger;
+
+message InstructionRequest{
+    string title= 1;
+    string to= 2;
+    string body= 3;
+}
+
+message InstructionResponse{
+    string response= 1;
+}
+
+service Messenger{
+    rpc SendMessage (InstructionRequest)  returns (InstructionResponse) {}
+}
